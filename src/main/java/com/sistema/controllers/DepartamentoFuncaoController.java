@@ -6,12 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sistema.models.CadastroPessoas;
+
 @Controller
 @ComponentScan()
 public class DepartamentoFuncaoController {
 	
-	//@Autowired
-	//private DepartamentoFuncaoController dfc;
+	@Autowired
+	private DepartamentoFuncaoController dp;
 	
 	@RequestMapping(value="/departamentofuncao", method=RequestMethod.GET)
 	public String departamentoFuncao() {
@@ -19,9 +21,14 @@ public class DepartamentoFuncaoController {
 	}
 	
 	@RequestMapping(value="/departamento", method=RequestMethod.POST,params="action=departamento")
-	public ModelAndView salvarDepartamento() {
+	public String formSalvarDepartamento(Departamento departamento) {
 		
 	}
+	public String formEnviaCadastroPessoa(CadastroPessoas cadastro) {
+		cp.save(cadastro);
+		return "redirect:/pessoas";
+	}
+
 	
 	@RequestMapping(value="/departamento", method=RequestMethod.POST,params="action=funcao")
 	public ModelAndView salvarFuncao() {
