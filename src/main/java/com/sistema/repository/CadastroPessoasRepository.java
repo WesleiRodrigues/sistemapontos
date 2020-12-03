@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.sistema.models.CadastroPessoas;
 
 public interface CadastroPessoasRepository extends CrudRepository<CadastroPessoas, String> {
-	CadastroPessoas findByCodigo (long codigo);
+	CadastroPessoas findByCodigo (int codigo);
 } 

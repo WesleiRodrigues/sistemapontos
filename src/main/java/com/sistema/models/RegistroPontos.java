@@ -9,28 +9,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Formula;
+
 @Entity
 public class RegistroPontos implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
-	
+		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3103538777426676920L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long codigo;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	private LocalDateTime dtiniciojornada;
 	private LocalDateTime dtiniciopausa;
 	private LocalDateTime dtterminopausa;
 	private LocalDateTime dtterminojornada;
-	
+
 	@ManyToOne
 	private CadastroPessoas pessoa;
 
-	public long getCodigo() {
-		return codigo;
+	public int getId() {
+		return id;
 	}
 
-	public void setCodigo(long codigo) {
-		this.codigo = codigo;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public LocalDateTime getDtiniciojornada() {
@@ -72,7 +76,5 @@ public class RegistroPontos implements Serializable{
 	public void setPessoa(CadastroPessoas pessoa) {
 		this.pessoa = pessoa;
 	}
-
-	
 
 }

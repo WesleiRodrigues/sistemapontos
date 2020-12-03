@@ -10,16 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Departamento implements Serializable {
+public class Funcao implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 4736739942219713365L;
+	private static final long serialVersionUID = -1719318668620836018L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private String descricao;
+	private String descricaofuncao;
 	
 	@OneToMany
 	private List<CadastroPessoas> pessoa;
@@ -32,12 +32,12 @@ public class Departamento implements Serializable {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescricaofuncao() {
+		return descricaofuncao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricaofuncao(String descricaofuncao) {
+		this.descricaofuncao = descricaofuncao;
 	}
 
 	public List<CadastroPessoas> getPessoa() {
@@ -47,5 +47,6 @@ public class Departamento implements Serializable {
 	public void setPessoa(List<CadastroPessoas> pessoa) {
 		this.pessoa = pessoa;
 	}
+
 	
 }
