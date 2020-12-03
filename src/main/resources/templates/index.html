@@ -12,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="style/stylecss.css"/>
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,16 +35,20 @@
 		<tr>
 			<th>Nome</th>
 			<th>CPF</th>
-			<th>Visualizar Registro Pontos</th>
+			<th>Pontos</th>
+			<th>Deletar</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr th:each="consulta :${consulta}">
 			<td>
 				<!-- CPC = CadastroPessoasController -->
- 				<a th:href="${(#mvc.url('CPC#detalhesPontos').arg(0, consulta.codigo)).build()}"><span th:text="${consulta.nomecompleto}"></span></a></td>
+ 				<span th:text="${consulta.nomecompleto}"></span></td>
  			<td>
  				<span th:text="${consulta.cpf}"></span></td>
+ 			<td>
+ 				<a href="detalhesPontos" th:href="@{/registrarponto/{codigo}(codigo=${consulta.codigo})}"><i class="material-icons">access_time</i></a>
+	 			<td><a href="deletar" th:href="@{/deletar/(codigo=${consulta.codigo})}"><i class="material-icons">delete</i></a></td>
 		</tr>
 	</tbody> 
 </table>
