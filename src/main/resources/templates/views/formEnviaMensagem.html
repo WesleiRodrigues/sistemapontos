@@ -54,12 +54,18 @@
 	<form method="post" class="container formGerais">
 		<div class="row">
 			<div class="input-field col s6">
-				<input type="text" id="nome" value="" name="nomede" required/>
-				<label for="nome" class="active">De</label>
+				<input type="text" id="de" value="" name="de" required/>
+				<label for="de" class="active">De</label>
 			</div>	
 			<div class="input-field col s6">
-				<input type="text" id="nome" value="" name="nomepara" required/>
-				<label for="nome" class="active">Para</label>
+				<input type="text" id="para" value="" name="para" required/>
+				<label for="para" class="active">Para</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8">
+				<input type="text" id="assunto" value="" name="assunto" required/>
+				<label for="assunto" class="active">Assunto</label>
 			</div>
 		</div>
 		<div class="row">
@@ -70,7 +76,8 @@
 		</div>
 		<div class="row">
 			<div class="input-field col s3">
-				<button type="submit" class="waves-effect waves-light btn #212121 grey darken-4"><i class="material-icons left">add_box</i>Enviar Mensagem</button>
+				<button type="submit" name="action" value="enviodemensagens" class="waves-effect waves-light btn #212121 grey darken-4">
+				<i class="material-icons left">add_box</i>Enviar Mensagem</button>
 			</div>
 		</div>
 	</form>
